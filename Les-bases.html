@@ -1,0 +1,247 @@
+<!--SYNTAXE BASE D'UNE PAGE HTML-->
+<!DOCTYPE html>
+<html>
+    <!-- La balise HTML Contient l'ensemble de ma page.-->
+
+    <head> 
+        <!-- La balise Head Contient les éléments d'en-tête de ma page. -->
+        
+        <!-- Permet de préciser l'encodage de notre page et avoir les accents -->
+        <meta charset="utf-8">
+    
+        <!-- La balise Title permet de donner un titre à ma page -->
+        <title>Les Bases du HTML</title>
+        
+        <!-- Les Balises Méta [Description, Keyword] sont utiles pour le référencement -->
+        <meta name="description" content="Une description unique pour chaque page, en relation avec son thème.">
+            
+    </head>
+        
+    <body>
+        <!--Dans la balise Body viendra s'insérer le contenu de ma page-->
+        
+        <!--A la découverte des balise de Titres-->
+        
+        <h1>Titre de Niveau 1</h1>
+        <h2>Titre de Niveau 2</h2>
+        <h3>Titre de Niveau 3</h3>
+        <h4>Titre de Niveau 4</h4>
+        <h5>Titre de Niveau 5</h5>
+        <h6>Titre de Niveau 6</h6>
+        
+        <p><strong> Les paragraphes:</strong></p>
+        
+        <!-- Paragraphe Simple-->
+        <p>Ici, s'introduit de façon inopinée un joli paragraphe...</p>
+        
+        <!-- Paragraphe avec saut de ligne-->
+        <p>Je ne comprend pas pourquoi...<br>ce saut de ligne!!!!</p>
+        
+        <p><strong>Liste Non-Ordonnée :</strong></p>
+            <!-- Liste Non ordonnée, utile pour créer des menus-->    
+        <ul>
+            <li>Accueil</li>
+            <li>Présentation</li>
+            <li>Mes services</li>
+            <li>Contact</li>
+        </ul>
+        
+        
+    <p><strong>Liste Ordonnée :</strong></p>
+    
+    <ol>
+        <li>Réalisattion d'un CDC</li>
+        <li>Réalisation d'une Maquette Graphique</li>
+        <li>Intégration HTML / CSS</li>
+    </ol>   
+    
+    <!-- Les DIVs-->
+    <div>
+        <p>La balise DIV, est une balise neutre de type block. Elle me servira pour structurer ma page.</p>    
+    </div>    
+    
+    <div>
+        <p>Les balises Block agissent sur un Axe Vertical et donc génère un retour à la ligne.<br>
+        <!-- La balise EM permet de mettre mon texte en italique-->
+        <em>Je pourrais toutes-fois changer leurs comportements avec du CSS</em></p>    
+  
+        <!--La balise HR me permet de créer une séparation dans ma page HTML-->
+        <hr>
+        
+        <p>Les balises <span>Inline</span> elles, agissent sur un Axe Horizontal et donc génère aucun retour à la ligne.</p>
+        
+        <br><em>Je pourrais toutes-fois changer leurs compoertements avec du CSS.</em>
+        
+    </div>
+        
+    <p><strong>Les Tableaux :</strong></p>    
+    
+    <!--Création d'un Tableau-->
+    <!--ATTENTION - ATTENTION-->    
+    <!-- N'utilisez jamais les tableaux pour votre mise en page HTML, vos tableaux servent uniquement pour afficher des donner-->
+        
+        <table border="1">
+            <!-- thead : L'entête de moon tableau-->
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+                
+            <tbody>
+                <tr>
+                    <td>DESTIN</td>
+                    <td>Jordan</td>
+                    <td>29</td>
+                    <td>Fort de France</td>
+                </tr>
+                <tr>
+                    <td>Sinatra</td>
+                    <td colspan="2">Franck</td>
+                </tr>
+            </tbody>
+        
+            <!-- tfoot : Son pierd de Page-->
+            <tfoot>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Age</th>
+                </tr>
+            </tfoot> 
+            
+        </table>
+        
+        <!-- En plus : colspan et rowspan permettent de fusionner les lignes et les colonnes du tableaux-->
+        
+        <p><strong>Les formulaires</strong></p>
+        
+        <form name="Nomduformulaire" action="FichierChargeduTraitementDeMonFormulaire.php" method="POST">
+            
+            <ul>
+                <li>La balise Form permet de créer un Formulaire</li>
+                
+                <li><strong>name :</strong>Permet de donner un nom au formulaire</li>
+            
+                <li><Strong>action :</Strong>Cet attribut est OBLIGATOIRE et permet de renseigner le script, la page vers laquelle l'utilisateur sera redirigé lors de l'envoi du formulaire.<em>Cette page va reçevoir l'ensemble des données saisie par mon utilisateur</em></li>
+                
+                <li><strong>method :</strong>Permet de préciser quellle méthode [GET | POST] doit être utilisée par le navigateur pour transmettre les données saisies vers la page <strong>action</strong></li>
+                
+                <!--La méthode Get est utilisé pour les recherches les données sont affiché en clair dans la barre d'outils et la méthode POST est plus sécurisé elle est utilisé pour les formulaires ..-->
+            </ul>
+            <!-- Champ Text -->
+            <label for="Monutilisateur">Utilisateur:</label><br>
+            <input type="text" name="utilisateur" id="MonUtilisateur" placeholder="Saisissez votre utilisateur..">
+            
+            <!--Mon formulaire étant en method="post" je vais récupérer dans mon fichier défini à 'action' la valeur via $_post['utilisateur'] en PHP-->
+            
+            <br>
+            <br>
+            
+            <!-- Champ Select : Créer une liste déroulante-->
+            <label for="MonPays">Choisissez votre Pays</label>
+            <select name="pays" id="MonPays">
+                <option selected value="mq">Martinique</option>
+                <!-- selected: valeur par défaut-->
+                <option value="fr">France</option>
+                <option value="gp">Guadeloupe</option>
+                <option value="gf">Guyanne</option>
+            </select>
+            
+            <br>
+            <br>
+            
+            <!--Bouton Radio-->
+            <label for="homme">Homme:</label>
+            <input type="radio" name="sexe" checked
+                   id="homme" value="homme">
+            
+            <!--checked: met la sélection par défaut-->
+            
+            <label for="femme">Femme:</label>
+            <input type="radio" name="sexe" 
+                   id="femme" value="femme">
+            
+            <br>
+            <br>
+            
+            <!-- Checkbox-->
+            <input type="checkbox" name="Loisirs"
+                   id="piano" value="piano">
+            <label for="piano">Piano</label>
+            
+            <br>
+            
+             <input type="checkbox" name="Loisirs"
+                   id="flute" value="flute">
+            <label for="flute">flûte</label>
+            
+            <br>
+             <input type="checkbox" name="Loisirs"
+                   id="violon" value="violon">
+            <label for="violon">Violon</label>
+            
+            <br>
+             <input type="checkbox" name="Loisirs"
+                   id="ukulele" value="ukulele">
+            <label for="ukulele">Ukulélé</label>
+            
+            <br>
+            <br>
+            <!-- Créer une zone de texte-->
+            <textarea name="observation" placeholder="Avez-vous des Observation ?"></textarea>
+            
+            <br>
+            
+            <!-- Soumettre mon formulaire-->
+            <input type="submit" value="Envoyer mes Données">
+            
+         </form>
+        
+            <br>
+            <br>
+            <hr>
+        
+         <p><strong>Créer un lien en HTML :</strong></p>
+        
+        <ul>
+            <li>La balise "a" permet de créer un lien vers une autre ressource. <em>(Images, Vidéo, PDF, ZIP...)</em></li>
+            
+            <li><strong>href: </strong> Permet de définir le chemin vers le fichierà lier</li>
+            
+            <li><strong>target: </strong> Prend plusieurs valeurs : _blank pour ouvrir le lien dans une nouvelle fenêtre par exemple</li>
+            
+            <li><strong>title: </strong> Permet de donner un titre au lien. Ce titre afficher dans une petite bulle au survol du lien par la souris</li>
+        </ul>
+        
+        <!-- Ici, c'est une URL Relative-->
+        <a href ="../monpremierfichier.html"
+           title="Cliquez-ici !"
+           target="_blank">Mon premier Fichier HTML</a>
+        
+        <br>
+        <hr>
+        <p><strong>Insérer une image :</strong></p>
+        
+        <!--Insérer une image dans ma page-->
+        <img src="http://lorempicsum.com/futurama/350/200/6"
+             alt="Mon texte alternatif">
+        <!--alt est tres important il nous permet de donné des info sur la photos si sa n'apparait pas>
+
+        <!--Pour faire un lien sur mon image, je te l'entoure de la balise a, tout simplement-->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </body>
+</html>
